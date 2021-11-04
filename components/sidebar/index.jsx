@@ -22,6 +22,7 @@ const Sidebar = () => {
             <div className="">
                 <p className="font-bold text-3xl text-gray-300 ">
                     Past events
+                    
                 </p>
             </div>
 
