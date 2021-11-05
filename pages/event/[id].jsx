@@ -25,7 +25,7 @@ export default function Home({ data }) {
     
 
     return (
-        <div className={` flex flex-col items-center justify-around h-screen bg-${theme}-500 `}>
+        <div className={` flex flex-col items-center justify-around h-screen bg-${theme}-800 `}>
             <div className="card flex flex-col bg-black">
                 <h1 className="text-blue-500">
                     {name}
