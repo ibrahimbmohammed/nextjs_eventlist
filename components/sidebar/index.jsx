@@ -1,30 +1,35 @@
 import React from 'react'
+import { useThemeContext } from '../../utils/theme-context';
 
 const Sidebar = () => {
+  const { theme } = useThemeContext();
+ 
+
     return (
-        <aside className="w-86 h-screen hidden lg:flex flex-col items-center justify-around fixed top-0 left-0  bg-myblue-900">
+        <aside className={`w-95 h-screen hidden md:flex flex-col items-start pl-16 justify-start fixed top-0 left-0  bg-${theme}-900`}>
             <div className="">
-                <p className="text-xl font-bold text-gray-300"> Name platform</p>
+                <p className="text-xl font-semibold text-gray-300 mt-5 "> Peddlesoft</p>
             </div>
-            <div className="">
-                <p className="text-2xl font-bold text-gray-300"> Nearest events</p>
+            <div className="flex flex-col justify-between h-92">
                 <span className="">
+                <p className="text-2xl font-semibold text-gray-300 mt-32"> Nearest events</p>
                     <p className="text-gray-300"> if you have any questions</p>
-                    <span>
-                        <p className="text-gray-300">
+                    <span className="">
+                        <p className="text-gray-300 inline-block h-1 border-b border-myblue-500 group-hover:border-myblue-900">
                             write to us
                         </p>
-                        <hr className="block h-1 border-t border-myblue-500 group-hover:border-myblue-900" />
+                        
                     </span>
 
                 </span>
-            </div>
-            <div className="">
-                <p className="font-bold text-3xl text-gray-300 ">
+                <div className="">
+                <p className="font-semibold text-3xl text-gray-300 mt-48 ">
                     Past events
-                    
+
                 </p>
             </div>
+            </div>
+
 
         </aside>
     )

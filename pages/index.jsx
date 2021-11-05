@@ -9,17 +9,18 @@ import Card from '../components/card';
 import { useThemeContext } from '../utils/theme-context';
 import { thememap } from '../utils/theme-map';
 
-export default function Home({ data }) {
+export default function Home({ data, loading }) {
 
+  const events = data?.events || [];
   const { theme, setTheme } = useThemeContext();
   useEffect(() => {
     setTheme(thememap["default"])
    }, [])
 
   return (
-    <div className={`ml-86 flex flex-col items-center justify-around h-screen bg-${theme}-800`}>
-      <div className="grid grid-cols-3 gap-0 grid-start">
-      {data.events.map((event) => (
+    <div className={`ml-95 flex flex-col items-center justify-around h-screen bg-${theme}-800`}>
+      <div className="grid grid-cols-3 ml-4 gap-0 grid-start">
+      {events.map((event) => (
      <Card key={event.id} event={event} />      
         ))}    
       </div>
@@ -35,7 +36,9 @@ export async function getStaticProps() {
     uri: 'https://dev.peddlesoft.com/graphql',
     cache: new InMemoryCache()
   });
-  const { data } = await client.query({
+
+  
+  const { data, loading, error } = await client.query({
     query: gql`
    query {
     events {
@@ -51,9 +54,12 @@ export async function getStaticProps() {
   }
   `
   })
+  
   return {
     props: {
-      data
+      data,
+      loading,
+    
     }
   }
 }

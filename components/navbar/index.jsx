@@ -2,8 +2,8 @@ import React from 'react'
 
 const Navbar = () => {
     return (
-        <nav className=" ml-86 cus-width h-16  flex justify-between items-center fixed top-0 bg-transparent ">
-   <div className="flex justify-between items-center text-gray-500 font-semibold text-sm space-x-8">
+        <nav className=" ml-95 cus-width h-16  flex justify-between items-center fixed top-0 bg-transparent ">
+   <div className="flex ml-10 justify-between items-center text-myblue-500 font-semibold text-sm space-x-8">
        <p>About us</p>
        <p>Product</p>
        <p>Pricing</p>
@@ -15,7 +15,7 @@ const Navbar = () => {
    </div>
 
 <div className="side ml-95 ">
-    <p className="font-semibold  "> write to us</p>
+    <p className="font-semibold text-myblue-600 cursor-pointer "> write to us</p>
 </div>
         </nav>
     )

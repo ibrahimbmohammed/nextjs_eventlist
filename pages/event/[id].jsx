@@ -18,14 +18,14 @@ const client = new ApolloClient({
 export default function Home({ data }) {
     const { name, theme: mytheme } = data?.eventById;
     const { theme, setTheme } = useThemeContext();
-    
+
     useEffect(() => {
         setTheme(thememap[`${mytheme}`])
        }, [])
     
 
     return (
-        <div className={`container mx-auto mt-4 flex flex-col items-center justify-around h-screen bg-${theme}-500 `}>
+        <div className={` flex flex-col items-center justify-around h-screen bg-${theme}-500 `}>
             <div className="card flex flex-col bg-black">
                 <h1 className="text-blue-500">
                     {name}

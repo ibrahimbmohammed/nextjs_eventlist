@@ -2,10 +2,10 @@
 export const thememap = {
     "default":"myblue",
     "": "dark",
-    "Dolore irure eiusmod": "yellow",
+    "Dolore irure eiusmod": "limeGreen",
     "Veniam labore repel": "purple",
-    "Adipisci architecto": "gray",
-    "Quia tenetur elit o": "ash",
-    "Expedita dolore quas": "pink",
+    "Adipisci architecto": "maroon",
+    "Quia tenetur elit o": "green",
+    "Expedita dolore quas": "brown",
   
   }
