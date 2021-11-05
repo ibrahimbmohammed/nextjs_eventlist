@@ -21,7 +21,7 @@ export default function Home({ data }) {
 
     useEffect(() => {
         setTheme(thememap[`${mytheme}`])
-       }, [])
+       }, [mytheme])
     
 
     return (

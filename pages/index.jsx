@@ -9,18 +9,17 @@ import Card from '../components/card';
 import { useThemeContext } from '../utils/theme-context';
 import { thememap } from '../utils/theme-map';
 
-export default function Home({ data, loading }) {
-
-  const events = data?.events || [];
+export default function Home({ data = [], loading}) {
+  const {events} = data || [];
   const { theme, setTheme } = useThemeContext();
   useEffect(() => {
     setTheme(thememap["default"])
-   }, [])
+   }, [theme])
 
   return (
     <div className={`ml-95 flex flex-col items-center justify-around h-screen bg-${theme}-800`}>
       <div className="grid grid-cols-3 ml-4 gap-0 grid-start">
-      {events.map((event) => (
+      {events && events.map((event) => (
      <Card key={event.id} event={event} />      
         ))}    
       </div>
